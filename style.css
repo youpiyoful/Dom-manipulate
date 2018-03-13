@@ -12,9 +12,9 @@ body{
   text-align: center;
 }
 
-.rectangle{
- background-color: blue;
-  width: 550px;
-  height: 190px;
-  margin-left:35%;
+#rectangle{
+ background-color: lightblue;
+  width: 300px;
+  height: 100px;
+  margin-left:42%;
 }
