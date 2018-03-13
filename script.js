@@ -1,7 +1,19 @@
-function upSizeText(_class){
-  this.class = _class;
-  this.class.style.font-size = 4em;
-}
+// function upSizeText(_class){
+//   this.class = _class;
+//   this.class.style.font-size = 4em;
+// }
+var text = document.querySelector("p");
 
-var text = document.getElementByClassName("text");
-var textBig = document.getElementByClassName("text").addEventListener(onclick, upSizeText("text"));
+text.addEventListener("click", function (e){
+
+  if (text.style.fontSize === "50px"){
+    text.style.fontSize ="20px";
+  } 
+
+  else{
+
+  text.style.fontSize = "50px";
+  }
+
+
+})
