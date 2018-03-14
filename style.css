@@ -1,0 +1,33 @@
+body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: url("rangutan2.jpg") no-repeat fixed;
+  background-size: 100%;
+}
+ 
+
+.text{
+  font-size: 1em;
+  color: white;
+}
+
+.object{
+  text-align: center;
+}
+
+#rectangle{
+ background-color: lightblue;
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  top:300px;
+  left:150px;
+  /* margin-left:42%;
+  margin-top: 150px; */
+}
+
+.flex{
+  display: flex;
+
+}
