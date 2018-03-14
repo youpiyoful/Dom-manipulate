@@ -13,12 +13,15 @@ function jump(_param) {
   var pos = 300;
   var id = setInterval(frame, 5);
   function frame() {
-    clearInterval(id);
-    pos = 300;
-    this.param.style.top = pos + "px";
-  } else{
-    pos --;
-    this.param.style.top = pos + "px";
+    if (pos == 150){
+      clearInterval(id);
+      pos = 300;
+      this.param.style.top = pos + "px";
+    }
+    else{
+      pos --;
+      this.param.style.top = pos + "px";
+    }
   }
 }
 
@@ -98,8 +101,10 @@ button6.addEventListener("click", function(e){
   colorSwitch(rectangle, "red");
 })
 
-rectangle.addEventListener("click", function(e){
-  jump(rectangle);
+document.addEventListener("keyup", function(e){
+  if(e.keyCode === 38){
+    jump(rectangle);
+  }
 })
 
 
