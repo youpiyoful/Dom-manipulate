@@ -8,7 +8,19 @@ function upSizeText(_selector) {
   }
 }
 
-
+function jump(_param) {
+  this.param = _param;
+  var pos = 300;
+  var id = setInterval(frame, 5);
+  function frame() {
+    clearInterval(id);
+    pos = 300;
+    this.param.style.top = pos + "px";
+  } else{
+    pos --;
+    this.param.style.top = pos + "px";
+  }
+}
 
 function upSizeHeight(_param){
   this.param = _param;
@@ -16,21 +28,16 @@ function upSizeHeight(_param){
       this.param.style.height = "100px";
   }
   else{
-    var temp = this.param.style.height;
-    temp += "10px";
-    this.param.style.height = temp;
+    this.param.style.height = parseInt(getComputedStyle(this.param).height) + 10 + "px";
   }
 }
 
-function colorSwitch(_param){
+function colorSwitch(_param, _color){
   this.param = _param;
-  this.param.style.backgroundColor = "lightgreen";
+  this.color = _color;
+  this.param.style.backgroundColor = this.color;
 }
 
-function colorSwitch2(_param){
-  this.param = _param;
-  this.param.style.backgroundColor = "red";
-}
 
 function initial(_param){
   this.param = _param;
@@ -71,31 +78,29 @@ button1.addEventListener("click", function(e){
 })
 
 
-button2.addEventListener("click", function(event){
-  colorSwitch(rectangle);
+button2.addEventListener("click", function(e){
+  colorSwitch(rectangle, "lightgreen");
 })
 
 
-button3.addEventListener("click", function(event){
+button3.addEventListener("click", function(e){
   initial(rectangle);
 })
 
-button5.addEventListener("click", function(event){
+button5.addEventListener("click", function(e){
   appear(rectangle);
 })
-button4.addEventListener("click", function(event){
+button4.addEventListener("click", function(e){
   disapear(rectangle);
 })
 
-button6.addEventListener("click", function(event){
-  colorSwitch2(rectangle);
+button6.addEventListener("click", function(e){
+  colorSwitch(rectangle, "red");
+})
+
+rectangle.addEventListener("click", function(e){
+  jump(rectangle);
 })
 
 
-
-
-
-// button6.addEventListener("click", function (event){
-//   colorSwitch(rectangle);
-// })
 
